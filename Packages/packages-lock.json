@@ -1,13 +1,10 @@
 {
   "dependencies": {
-    "com.singularitygroup.hotreload": {
-      "version": "file:com.singularitygroup.hotreload",
+    "com.sakana3.probuilderhelpermenu": {
+      "version": "file:C:/Users/Quent/Downloads/ProBuilderHelperMenu-main/package",
       "depth": 0,
-      "source": "embedded",
-      "dependencies": {
-        "com.unity.ugui": "1.0.0",
-        "com.unity.modules.unitywebrequest": "1.0.0"
-      }
+      "source": "local",
+      "dependencies": {}
     },
     "com.unity.burst": {
       "version": "1.8.25",
@@ -129,6 +126,18 @@
       "depth": 1,
       "source": "registry",
       "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.probuilder": {
+      "version": "6.0.8",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.shadergraph": "17.0.3",
+        "com.unity.modules.imgui": "1.0.0",
+        "com.unity.modules.physics": "1.0.0",
+        "com.unity.settings-manager": "1.0.3"
+      },
       "url": "https://packages.unity.com"
     },
     "com.unity.render-pipelines.core": {
