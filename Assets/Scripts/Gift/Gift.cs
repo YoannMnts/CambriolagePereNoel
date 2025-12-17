@@ -7,12 +7,13 @@ namespace Gift
     {
         public GiftData GiftData { get; private set; }
         
-        public void Interact()
+        public void Interact(Bag bag)
         {
-            CoinUI.Instance.AddCoin(GiftData.CoinGain);
+            bag.AddCoin(GiftData.CoinGain);
+            CoinUI.Instance.Connect(bag);
             Destroy(gameObject);
         }
-
+        
         public void SetData(GiftData giftData)
         {
             GiftData = giftData;

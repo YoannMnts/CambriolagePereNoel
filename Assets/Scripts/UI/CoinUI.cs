@@ -13,11 +13,10 @@ namespace UI
         [field: SerializeField]
         public CanvasGroup CanvasGroup { get; private set; }
         [field: SerializeField]
-        public TextMeshPro CurrentCoinText { get; private set; }
+        public TextMeshProUGUI CurrentCoinText { get; private set; }
         [field: SerializeField]
-        public TextMeshPro MaxCoinText { get; private set; }
-        public int CurrentCoin { get; private set; }
-        public int MaxCoin { get; private set; }
+        public TextMeshProUGUI MaxCoinText { get; private set; }
+        
         
         private void Awake()
         {
@@ -25,24 +24,21 @@ namespace UI
             {
                 Destroy(gameObject);
             }
-            MaxCoin = PlayerPrefs.GetInt("MaxCoinAmount", 0);
-            MaxCoinText.text = MaxCoin.ToString();
+            Instance = this;
+            var maxCoin = PlayerPrefs.GetInt("MaxCoinAmount");
+            MaxCoinText.text = maxCoin.ToString();
         }
 
-        public void AddCoin(int coinAmount)
+        public void Connect(Bag bag)
         {
-            CurrentCoin = coinAmount;
-            CurrentCoinText.text = coinAmount.ToString();
+            Debug.Log("Connect");
+            CurrentCoinText.text = bag.CurrentCoin.ToString();
             OnCoinGain?.Invoke();
-            if (CurrentCoin > MaxCoin)
+            if (bag.CurrentCoin > bag.MaxCoin)
             {
                 OnNewMaxScore?.Invoke();
             }
         }
 
-        private void OnDisable()
-        {
-            PlayerPrefs.SetInt("MaxCoinAmount", CurrentCoin);
-        }
     }
 }

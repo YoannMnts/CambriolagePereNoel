@@ -1,4 +1,4 @@
 ﻿public interface IInterctable
 {
-    public void Interact();
+    public void Interact(Bag bag);
 }

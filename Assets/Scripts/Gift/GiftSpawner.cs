@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace Gift
@@ -6,7 +7,7 @@ namespace Gift
     public class GiftSpawner : MonoBehaviour
     {
         [field : SerializeField]
-        public Transform[] SpawnPoints { get; private set; }
+        public Vector3[] SpawnPoints { get; private set; }
         
         [field : SerializeField]
         public Transform Root { get; private set; }
@@ -16,25 +17,28 @@ namespace Gift
         private void Awake()
         {
             giftDatas = Resources.LoadAll<GiftData>("Datas/GiftDatas");
-            SpawnPoints = Root.GetComponentsInChildren<Transform>();
-            foreach (Transform child in Root)
+            if (giftDatas != null)
             {
-                Destroy(child.gameObject);
-            }
+                var gifts = Root.GetComponentsInChildren<Gift>();
+                SpawnPoints = new Vector3[gifts.Length];
+                for (int i = 0; i < gifts.Length; i++)
+                {
+                    Debug.Log(gifts[i].gameObject.transform.position);
+                    SpawnPoints[i] = gifts[i].gameObject.transform.position;
+                }
+                foreach (Transform child in Root)
+                {
+                    Destroy(child.gameObject);
+                }
 
-            for (int i = 0; i < SpawnPoints.Length; i++)
-            {
-                int randomNumber = Random.Range(0, giftDatas.Length);
-                GiftData giftData = giftDatas[randomNumber];
-                Gift instance = Instantiate(giftData.Prefab, Root);
-                instance.SetData(giftData);
-                instance.transform.position = SpawnPoints[i].position;
+                for (int i = 0; i < SpawnPoints.Length; i++)
+                {
+                    int randomNumber = Random.Range(0, giftDatas.Length);
+                    GiftData giftData = giftDatas[randomNumber];
+                    Gift instance = Instantiate(giftData.Prefab, SpawnPoints[i], Quaternion.identity, Root);
+                    instance.SetData(giftData);
+                } 
             }
-        }
-
-        private void Reset()
-        {
-            SpawnPoints = Root.GetComponentsInChildren<Transform>();
         }
     }
 }
