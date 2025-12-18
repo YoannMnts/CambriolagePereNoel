@@ -17,6 +17,8 @@ namespace UI
         [field: SerializeField]
         public TextMeshProUGUI MaxCoinText { get; private set; }
         
+        [field: SerializeField]
+        public Transform PlayerTransform { get; private set; }
         
         private void Awake()
         {
@@ -27,6 +29,12 @@ namespace UI
             Instance = this;
             var maxCoin = PlayerPrefs.GetInt("MaxCoinAmount");
             MaxCoinText.text = maxCoin.ToString();
+        }
+        
+        void FixedUpdate()
+        {
+            Vector3 direction = transform.position - PlayerTransform.position;
+            transform.rotation = Quaternion.LookRotation(direction);
         }
 
         public void Connect(Bag bag)
