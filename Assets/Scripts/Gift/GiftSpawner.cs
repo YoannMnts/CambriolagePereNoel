@@ -23,7 +23,7 @@ namespace Gift
                 SpawnPoints = new Vector3[gifts.Length];
                 for (int i = 0; i < gifts.Length; i++)
                 {
-                    Debug.Log(gifts[i].gameObject.transform.position);
+                    //Debug.Log(gifts[i].gameObject.transform.position);
                     SpawnPoints[i] = gifts[i].gameObject.transform.position;
                 }
                 foreach (Transform child in Root)
