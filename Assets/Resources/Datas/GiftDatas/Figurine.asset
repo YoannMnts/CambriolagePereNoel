@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Figurine
   m_EditorClassIdentifier: Assembly-CSharp::Gift.GiftData
   <CoinGain>k__BackingField: 600
-  <Prefab>k__BackingField: {fileID: 0}
+  <Prefab>k__BackingField: {fileID: 48689412322394685, guid: 2bc1bd99de2b5334886c5dfaf30bb566, type: 3}
