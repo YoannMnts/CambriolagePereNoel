@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a4d9dc05842c42ecbe93b6898fbae2d4, type: 3}
-  m_Name: GiftDataTest
+  m_Name: PapierCadeaux
   m_EditorClassIdentifier: Assembly-CSharp::Gift.GiftData
-  <CoinGain>k__BackingField: 1
+  <CoinGain>k__BackingField: 100
   <Prefab>k__BackingField: {fileID: 48689412322394685, guid: 2bc1bd99de2b5334886c5dfaf30bb566, type: 3}

@@ -6,6 +6,7 @@ namespace Gift
 {
     public class GiftSpawner : MonoBehaviour
     {
+        public static GiftSpawner Instance;
         [field : SerializeField]
         public Vector3[] SpawnPoints { get; private set; }
         
@@ -16,6 +17,9 @@ namespace Gift
 
         private void Awake()
         {
+            if (Instance != null)
+                Destroy(this);
+            Instance = this;
             giftDatas = Resources.LoadAll<GiftData>("Datas/GiftDatas");
             if (giftDatas != null)
             {

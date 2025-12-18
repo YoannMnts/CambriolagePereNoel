@@ -12,6 +12,10 @@ namespace Gift
             bag.AddCoin(GiftData.CoinGain);
             CoinUI.Instance.Connect(bag);
             Destroy(gameObject);
+            if (GiftSpawner.Instance.Root.GetComponentsInChildren<Transform>() == null)
+            {
+                Application.Quit();
+            }
         }
         
         public void SetData(GiftData giftData)
