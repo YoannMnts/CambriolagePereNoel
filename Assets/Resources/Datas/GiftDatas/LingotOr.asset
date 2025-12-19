@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: LingotOr
   m_EditorClassIdentifier: Assembly-CSharp::Gift.GiftData
   <CoinGain>k__BackingField: 50
-  <Prefab>k__BackingField: {fileID: 48689412322394685, guid: 2bc1bd99de2b5334886c5dfaf30bb566, type: 3}
+  <Prefab>k__BackingField: {fileID: 5391951427761966492, guid: 8645b47eb173d5048a78c6f212acfb9d, type: 3}
