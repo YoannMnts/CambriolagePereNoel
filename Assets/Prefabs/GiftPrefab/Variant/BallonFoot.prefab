@@ -167,11 +167,16 @@ PrefabInstance:
       propertyPath: m_Size.z
       value: 0.23
       objectReference: {fileID: 0}
+    - target: {fileID: 6147906407614685162, guid: 2bc1bd99de2b5334886c5dfaf30bb566, type: 3}
+      propertyPath: m_ColorPropertyName
+      value: _BaseColor
+      objectReference: {fileID: 0}
     - target: {fileID: 6825564244965815657, guid: 2bc1bd99de2b5334886c5dfaf30bb566, type: 3}
       propertyPath: m_Name
       value: BallonFoot
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6147906407614685162, guid: 2bc1bd99de2b5334886c5dfaf30bb566, type: 3}
     m_RemovedGameObjects:
     - {fileID: 9119670684773609034, guid: 2bc1bd99de2b5334886c5dfaf30bb566, type: 3}
     m_AddedGameObjects:
