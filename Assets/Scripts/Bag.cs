@@ -11,6 +11,11 @@ public class Bag : MonoBehaviour
     public int MaxCoin { get; private set; }
     private void OnTriggerEnter(Collider other)
     {
+        if (other.GetComponentInParent<Transform>().CompareTag("Player"))
+        {
+            return;
+        }
+        
         if (other.GetComponentInParent<XRGrabInteractable>().TryGetComponent(out IInterctable interactable))
         {
             interactable.Interact(this);
