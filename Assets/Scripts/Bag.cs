@@ -27,5 +27,7 @@ public class Bag : MonoBehaviour
     public void AddCoin(int amount)
     {
         CurrentCoin += amount;
+        Debug.Log(CurrentCoin);
+        CoinUI.Instance.Connect(this);
     }
 }

@@ -10,7 +10,7 @@ namespace Gift
         public void Interact(Bag bag)
         {
             bag.AddCoin(GiftData.CoinGain);
-            CoinUI.Instance.Connect(bag);
+            Debug.Log("AAAAAAAAAAAAA");
             Destroy(gameObject);
             if (GiftSpawner.Instance.Root.GetComponentsInChildren<Transform>() == null)
             {

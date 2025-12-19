@@ -39,13 +39,15 @@ namespace UI
 
         public void Connect(Bag bag)
         {
-            Debug.Log("Connect");
+            Debug.Log($"connecting to bag : {bag.CurrentCoin.ToString()}");
+            Debug.Log(CurrentCoinText.text);
             CurrentCoinText.text = bag.CurrentCoin.ToString();
             OnCoinGain?.Invoke();
             if (bag.CurrentCoin > bag.MaxCoin)
             {
                 OnNewMaxScore?.Invoke();
             }
+            Debug.Log(CurrentCoinText);
         }
 
     }
